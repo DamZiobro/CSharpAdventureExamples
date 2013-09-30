@@ -18,6 +18,9 @@ namespace protectionLevels
             privateInt = setValue;
         }
 
+        //X
+        int defaultProtectedInt;
+
     };
 
 	class MainClass

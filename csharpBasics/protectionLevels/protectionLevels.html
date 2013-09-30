@@ -16,5 +16,7 @@ The same situation is for getting value of private field (point VIII). We need t
 Of course if we were have access to protectedInt variable in above example we also need to define publicly accessible getter and setter. It is because protected fields are accessible whithin class where are defined and within classes derived from class where protected fields are defined. 
 Now take a look at point XI. We do not have compiler error here, because we are accessing our internalInt field from the same assembly where testObject class is defined.
 
+One more important information about protection levels you can find in point X. What is protection level of defaultProtectedInt? Its protection level is 'private'. It is because 'private' is default protection level in C# (the same as in C++).
+
 Above example you can download and compile from here:
 
