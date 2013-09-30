@@ -1,0 +1,22 @@
+Instead of clasic class field definition, C# adds one more - property. Sometimes for beginners there is hard to understand difference between field and property in C#. </br>
+Main difference is: </br></br>
+Field is just simple variable within class, while property is field wrapped in two functions: getter and setter. </br><br />
+So in general, where you defines property, compiler silently creates invisible field for that property make that field accessible by get and set functions which are wrapped in Property name. Thanks to that we can use properties like public fields in our code with encapsulation keeping.<br />
+Let's see below example:<br />
+
+Output of that example is: 
+
+Assigning properties values
+TestProperty: 10
+testField: 20
+
+In point I we are defining normal field - private field as 'private' is default protection level in C#.<br />
+In point II we are defining default property. As we can see we have two keywords (get and set) within definition of that property. 
+Those keywords defines default getter and setter for out property. 
+Thanks to that we can use that property as public field (encapsulation is being kept thanks to get and set functions within property definition) - see points V and VII. <br />
+What is more we can customize property get and set functions according to our needs. 
+Take a look at point III. We are defining there TestFieldProperty which has customized get and set function. That property is related to our private testField, so we can use it to modify testField according to our needs.
+In this example when we are using assignment operator for our TestFieldProperty assigning its value 10 as in point VI, we are accually assigning value 20 to our testField. 
+Thus, when we are getting value of TestFieldProperty in point VIII, it will return value 20 (beause it is actual value of testField according to our customization of get function in TestFieldProperty).
+
+

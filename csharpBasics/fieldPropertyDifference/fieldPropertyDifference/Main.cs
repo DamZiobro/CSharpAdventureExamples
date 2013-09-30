@@ -28,11 +28,11 @@ namespace fieldPropertyDifference
             Console.WriteLine ("Assigning properties values");
             TestClass testClassObject = new TestClass();
             //testClassObject.testField = 5; //IV - inaccessible because of private protection level
-            testClassObject.TestProperty = 10; //IV - assigning value to TestProperty using set method
-            testClassObject.TestFieldProperty = 10; //V - assigning testField value using TestFieldProperty
+            testClassObject.TestProperty = 10; //V - assigning value to TestProperty using set method
+            testClassObject.TestFieldProperty = 10; //VI - assigning testField value using TestFieldProperty
 
-            Console.WriteLine("TestProperty: " + testClassObject.TestProperty); //using get method of TestProperty
-            Console.WriteLine("testField: " + testClassObject.TestFieldProperty); //suing get method of TestFieldProperty
+            Console.WriteLine("TestProperty: " + testClassObject.TestProperty); //VII - using get method of TestProperty
+            Console.WriteLine("testField: " + testClassObject.TestFieldProperty); //VIII - suing get method of TestFieldProperty
 
         }
 	}
