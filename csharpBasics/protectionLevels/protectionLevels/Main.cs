@@ -26,14 +26,18 @@ namespace protectionLevels
 		{
             TestClass testObject = new TestClass();
             //VII
-            //testObject.privateInt = 5; //impossible to assign to private field directly
+            //testObject.privateInt = 5; //compiler error - impossible to assign to private field directly
             //using public set function to assign to private field 
             testObject.setPrivateInt(5);
 
             //VIII
-            //int a = testObject.privateInt; //cannot get value of private field
+            //int a = testObject.privateInt; //compiler error - cannot get value of private field
             //getting value of private field using public get function 
             int a = testObject.getPrivateInt();
+
+            //IX - access to internal protected field
+            testObject.internalInt = 10; //accessible because our class is in this assembly
+            a = testObject.internalInt; //the same as one line above
 		}
 	};
 }

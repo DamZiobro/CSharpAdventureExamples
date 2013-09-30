@@ -1,0 +1,20 @@
+Because C# is object oriented programming language its classes implementation allows make encapsulation mechanism. </br>
+<strong>Encapsulation</strong> is mechanism which allow hide some functionality withing class or object to avoid its access from outside of that class or object. </br>
+Encapsulation is very useful in order to make protection for some operation and make them invoke in only one known place of code. Thanks to that we have easier control on such encapsulated properties or functions. </br>
+In order to define encpasulation we have protection levels which allow us make or prevent access to fields, properties and methods of our class. </br>
+C# has 4 levels of protection: </br>
+<ul>
+<li><i><u>private</u></i> - fields can be used within objects of this class only. Default protection level for fields</li>
+<li><i><u>protected</u></i> - fields can be used within objects of this class and in classes derived from this class</li>
+<li><i><u>public</u></i> - fields can be used within all objects of that class</li>
+<li><i><u>internal</u></i> - this is new protection level and it is protection level default for class. It means that class can be used by other classes within own assembly only. More about assemblies you can find here: <a href="http://csharpdotnetadventure.blogspot.co.uk/2013/09/assembly-unit-in-c.html">Assembly unit</a></li>
+</ul>
+In order to better understand protection levels, see the example below:
+We defined 4 fields of different protection level (in points I, II, III, IV). Because our privateInt field is private we need to define two public accessible functions to set and get its value (getter (point V) and setter (point VI) - it is very common method of access to private fields keeping encapsulation). 
+Now take a look on point VII. We have not direct access to private values so direct assignment (as in commented line below point VII) is unavailable. In order to set value to private field we need to use our publicly accessible setter function.
+The same situation is for getting value of private field (point VIII). We need to use public getPrivateInt() function in order to do that.
+Of course if we were have access to protectedInt variable in above example we also need to define publicly accessible getter and setter. It is because protected fields are accessible whithin class where are defined and within classes derived from class where protected fields are defined. 
+Now take a look at point XI. We do not have compiler error here, because we are accessing our internalInt field from the same assembly where testObject class is defined.
+
+Above example you can download and compile from here:
+
