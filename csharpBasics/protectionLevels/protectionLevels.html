@@ -9,14 +9,14 @@ C# has 4 levels of protection: </br>
 <li><i><u>public</u></i> - fields can be used within all objects of that class</li>
 <li><i><u>internal</u></i> - this is new protection level and it is protection level default for class. It means that class can be used by other classes within own assembly only. More about assemblies you can find here: <a href="http://csharpdotnetadventure.blogspot.co.uk/2013/09/assembly-unit-in-c.html">Assembly unit</a></li>
 </ul>
-In order to better understand protection levels, see the example below:
-We defined 4 fields of different protection level (in points I, II, III, IV). Because our privateInt field is private we need to define two public accessible functions to set and get its value (getter (point V) and setter (point VI) - it is very common method of access to private fields keeping encapsulation). 
-Now take a look on point VII. We have not direct access to private values so direct assignment (as in commented line below point VII) is unavailable. In order to set value to private field we need to use our publicly accessible setter function.
-The same situation is for getting value of private field (point VIII). We need to use public getPrivateInt() function in order to do that.
-Of course if we were have access to protectedInt variable in above example we also need to define publicly accessible getter and setter. It is because protected fields are accessible whithin class where are defined and within classes derived from class where protected fields are defined. 
-Now take a look at point XI. We do not have compiler error here, because we are accessing our internalInt field from the same assembly where testObject class is defined.
+In order to better understand protection levels, see the example below:<br />
+We defined 4 fields of different protection level (in points I, II, III, IV). Because our privateInt field is private we need to define two public accessible functions to set and get its value (getter (point V) and setter (point VI) - it is very common method of access to private fields keeping encapsulation). <br />
+Now take a look on point VII. We have not direct access to private values so direct assignment (as in commented line below point VII) is unavailable. In order to set value to private field we need to use our publicly accessible setter function.<br />
+The same situation is for getting value of private field (point VIII). We need to use public getPrivateInt() function in order to do that.<br />
+Of course if we were have access to protectedInt variable in above example we also need to define publicly accessible getter and setter. It is because protected fields are accessible whithin class where are defined and within classes derived from class where protected fields are defined. <br />
+Now take a look at point XI. We do not have compiler error here, because we are accessing our internalInt field from the same assembly where testObject class is defined.<br />
 
-One more important information about protection levels you can find in point X. What is protection level of defaultProtectedInt? Its protection level is 'private'. It is because 'private' is default protection level in C# (the same as in C++).
+One more important information about protection levels you can find in point X. What is protection level of defaultProtectedInt? Its protection level is 'private'. It is because 'private' is default protection level in C# (the same as in C++).<br />
 
-Above example you can download and compile from here:
+Above example you can download and compile from here:<br />
 
