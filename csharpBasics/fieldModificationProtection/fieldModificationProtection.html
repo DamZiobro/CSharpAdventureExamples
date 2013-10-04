@@ -1,0 +1,31 @@
+C# provide two field modifiers for protection of field modification. Except of const keyword well-known from C++ we have additional readonly keyword in C#. <br />
+So we have three levels of field modification protection in C#:<br />
+<ul>
+<li><i><u>private bool fieldName</u></i> - such field cannot be modify outside class but can be modify inside</li>
+<li><i><u>private readonly bool fieldName</u></i> - such field can be modified in constructor of class only (useful for variables which should be once initialized and not modified later. In terms of properties  - readonly properties can never be modified.</li>
+<li><i><u>private const bool fieldName</u></i> - such field can never be modified</li>
+</ul>
+<br />
+See how those modifiers are working on the example below:<br />
+<script src="https://gist.github.com/xmementoit/6823321.js"></script><br /><br />
+
+In points I, II, III we are defining fields with different modification protection levels. In points IV we have constructor of our TestClass 
+and in point VIa we have one additional function for modification values of our fields.<br /><br />
+
+First lets's analyze constructor modifications.
+<ul>
+    <li>point V - we have modificatbleField which has not any modification protection. So it can be modify anywhere withing class - also in constructor. No compilation error.</li>
+    <li>point VI - readonly protected field - it can be modify within constructor only - we are within constructor - no compilation error</li>
+    <li>point VII - const protected field - it cannot be modify anywhere - if you uncomment that line you will receive compilation error because you are trying modify field which is immutable</li>
+</ul>
+<br /><br />
+
+Now let's see on trying of modification our fields withing not-constructor public method:
+<ul>
+    <li>point VIII - the same situation as in point V - we can modify this field - no compilation error</li>
+    <li>point IX - readonly protected field and we are outside of constructor, so we cannot modify this field - compilation error when you uncomment this line</li>
+    <li>point X - const field - the same situation as in point VII - compilation error when you uncomment this line</li>
+</ul>
+
+Code of this example you can download and check from here: 
+<a href="https://github.com/xmementoit/CSharpAdventureExamples/tree/master/csharpBasics/fieldPropertyDifference">https://github.com/xmementoit/CSharpAdventureExamples/tree/master/csharpBasics/fieldPropertyDifference</a>
