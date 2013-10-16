@@ -1,0 +1,25 @@
+Enumeration is basic C# type mostly used for increase readability of code and make variable type safety. <br />
+
+Assume that we would like to use weekdays in some variable. We can create create int variable for it and assume that following numers (1-7) are associated
+with following weekdays. This would be enough but every use which will read our code should know about our assumptions to have no problems with analyze. 
+Additionally someout can accidentialy assign value being out of range 1-7 which can cause unexpected problems.<br />
+
+Better solution for above problem is using enumeration. Let's see following example: <br />
+<script src="https://gist.github.com/xmementoit/7006122.js"></script><br />
+
+Output of this example is: <br /> 
+<script src="https://gist.github.com/xmementoit/7006136.js"></script><br />
+
+In point I we are declaring our weekdays enumeration. Declaring is vary easy - we are using enum NameOfEnumeration syntax putting enumearation values into curly brackets, separated by comas.<br /> 
+Point III shows how to use normal enumeration. We are using enumeration type as any other type in C#. We are creating variable of our enumeration type. After that we can assign only 
+values from our enumeration into that variable which protects us by problem of assigning out-of-range unexpected value to variable. We we are trying assign other value than enumeration value we will receive compilation error.<br />
+
+You can also notice that our code has better readability right now. Comparison of <code>day == Days.Sunday</code> is definitely better understandable than <code>day == 7</code><br />
+
+In point II we are seeing one more use of enumeration types. We can create bitfields using enumerations which has better readability than just naming bits with following numbers.
+In order to decleare it we are using [Flags] directive before enumeration declaration. As you can see we are defining following powers of 2 values to following bits representing LEDs. <br />
+
+In point IV we are setting bits our bitfield using bit operators | (or) and we are checking whether bit is set using & (and) bitvise operator.
+
+Above example you can find and compile from here: 
+<a href="https://github.com/xmementoit/CSharpAdventureExamples/tree/master/csharpBasics/enumsAndBitFields">https://github.com/xmementoit/CSharpAdventureExamples/tree/master/csharpBasics/enumsAndBitFields</a>
