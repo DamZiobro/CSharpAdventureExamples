@@ -1,0 +1,41 @@
+C# is language which operates with two kind of types:
+<ul>
+    <li><i>value type</i> - type where only one space of memory is allocated. It is related for primitive C# types like: int, char, float, bool etc. as well as 
+                     for struct types. If you copy value type to another type new instance of object will be created.</li>
+    <li><i>reference type</i> - type related to class objects. When we are declaring such class object, two memory spaces are being allocated. Object of class type and 
+                     reference for such object. If you copy reference type to another reference type, only reference is being coping. It means that both references
+                     will be able to operate (ex. modify) the same object. Threfore when we modify object using one reference and will try to get its fields values
+                     using second reference, fields will have values after modification. As opposed to C++, there is possible to create reference type 
+                     being not related to any object - null reference. Reference types in C# are very similar to pointers in C++.</li>
+</ul>
+
+Let's see example before for better understanding:
+<script src="https://gist.github.com/xmementoit/7807615.js"></script>
+Output of this example is:
+<script src="https://gist.github.com/xmementoit/7807642.js"></script>
+
+In point I we are declaring class TestClass which will be base for our reference type object.<br /><br />
+In point II we are declaring struct TestStruct which will be base for our value type object.<br /><br />
+Point III presents initialization and assigning basic values for three different objects: 
+<ul>
+    <li>class type object being reference type object</li>
+    <li>struct type object being value type object</li>
+    <li>primitive type (int type) object being value type object</li>
+</ul>
+and displaying value of our objects in point IV.
+Point V is key point of this example. Here we are passing our objects to the function and trying to modify its values there 
+in order to check difference between reference type and value type.<br /><br />
+Point VI prints values of our objects after invoking changeValuesOfClassAndStruct() function.<br /><br />
+As you can see value of class type is being changed, while values of struct types and int type are not being changed. It is because 
+default parameters passing to the function in C# is passing by value. This means we are copying object which we are passing to the function and copy of such object
+is being visible only withing function. <br /><br />
+However when we are passing reference type object we are passing reference to 
+our object by value (copying reference to object - creating second reference to object), which allows as to see modified objects after exiting function 
+ using first reference to the object. So second copy of our reference is visible only withing function, but thanks to first copy of reference to the same
+ object which is visible outside the function we can see modified object outside of function.<br /><br />
+
+Reference and value types are one of major basic concepts which every C# developer should understand. This concept sometimes confuses people switching 
+to C# from C++ programming language, where reference to object always have is marked using '&' character. In C# it is not required - instead we need to remember
+that every class type is reference type.
+
+Code of above example can be downloaded from this blog's GitHub repository. You can find it here:  <a href="https://github.com/xmementoit/CSharpAdventureExamples/tree/master/csharpBasics/valueAndReferenceTypes">Value and reference types</a>
