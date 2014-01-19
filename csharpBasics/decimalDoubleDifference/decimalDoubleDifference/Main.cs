@@ -13,6 +13,7 @@ namespace decimalDoubleDifference
 			Console.WriteLine ("Is float1 == 1: " + (float1 == 1));
 			Console.WriteLine ("Is double1 == 1: " + (double1 == 1));
 			Console.WriteLine ("Is decimal1 == 1: " + (decimal1 == 1));
+
 		}
 	}
 }
